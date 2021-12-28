@@ -53,12 +53,8 @@ class Color {
 		return `rgb(${this.r},${this.g},${this.b})`;
 	};
 	hex = function () {
-		return (
-			"#" +
-			((1 << 24) + (this.r << 16) + (this.g << 8) + this.b)
-				.toString(16)
-				.slice(1)
-		);
+		const { r, g, b } = this;
+		return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 	};
 }
 
