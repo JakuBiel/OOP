@@ -1,4 +1,4 @@
-//factory
+//        factory
 // function makeColor(r, g, b) {
 // 	const color = {};
 // 	color.r = r;
@@ -17,29 +17,49 @@
 
 // const firstColor = makeColor(12, 12, 250);
 
-//constructor
+//          constructor
 
-function Color(r, g, b) {
-	this.r = r;
-	this.g = g;
-	this.b = b;
-	console.log(this);
-	// this.rgb = function () {
-	// 	return `rgb(${r},${g},${b})`;
-	// };
-	// this.hex = function () {
-	// 	return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-	// };
+// function Color(r, g, b) {
+// 	this.r = r;
+// 	this.g = g;
+// 	this.b = b;
+// 	console.log(this);
+// 	// this.rgb = function () {
+// 	// 	return `rgb(${r},${g},${b})`;
+// 	// };
+// 	// this.hex = function () {
+// 	// 	return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+// 	// };
+// }
+
+// Color.prototype.rgb = function () {
+// 	return `rgb(${this.r},${this.g},${this.b})`;
+// };
+// Color.prototype.hex = function () {
+// 	return (
+// 		"#" +
+// 		((1 << 24) + (this.r << 16) + (this.g << 8) + this.b).toString(16).slice(1)
+// 	);
+// };
+
+class Color {
+	constructor(r, g, b, name) {
+		this.r = r;
+		this.g = g;
+		this.b = b;
+		this.name = name;
+	}
+	rgb = function () {
+		return `rgb(${this.r},${this.g},${this.b})`;
+	};
+	hex = function () {
+		return (
+			"#" +
+			((1 << 24) + (this.r << 16) + (this.g << 8) + this.b)
+				.toString(16)
+				.slice(1)
+		);
+	};
 }
 
-Color.prototype.rgb = function () {
-	return `rgb(${this.r},${this.g},${this.b})`;
-};
-Color.prototype.hex = function () {
-	return (
-		"#" +
-		((1 << 24) + (this.r << 16) + (this.g << 8) + this.b).toString(16).slice(1)
-	);
-};
-
-const n = new Color(2, 3, 4);
+const c1 = new Color(255, 67, 89, "tomato");
